@@ -1,0 +1,60 @@
+<% paginated_products = params.key?(:keywords) ? Spree::Config.searcher.products : products %>
+<% if params[:keywords] %>
+<h3><%= t(:search_results, :keywords => h(params[:keywords])) %></h3>
+<% end %>
+<% if products.empty? %>
+  <%= t(:no_products_found) %>
+<% end %>
+
+<% if products.any? %>
+  <% products.each do |product| %>
+    <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>
+<!--- Post Starts --> 
+      <div class="cat-post">
+        <%= link_to small_image(product) + ' <img style="border: none;" alt=""', product %>
+        <div class="cat-info">
+          <h3><%= link_to product.name, product, :rel=>"bookmark" %></h3> 
+          <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque imperdiet, nisi sed commodo fermentum, diam orci eleifend...</div>			
+          <div class="cat-info-text"> 
+            <div class="price">Price: <%=product_price(product)%></div> 
+            <div class="readmore"><%= link_to "More Info", product %></div> 
+          </div> 
+        </div> 
+        <!--<%= link_to product.name + "<span class='price selling'>#{product_price(product)}</span>", product, :class => 'info' %>-->
+      </div>
+<!--- Post Ends -->       
+    <% end %>
+  <% end %>
+<% end %>
+
+<!--- Post Starts
+			<div class="cat-post">
+									<a href="http://www.lifeofstrange.com/envirashop/electronics/ecommerce-wordpress-theme/"><img style="border: none;" alt="" src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/epblue.jpg&amp;h=120&amp;w=120&amp;zc=1" /></a>
+			
+			<div class="cat-info">
+
+			<h3><a href="http://www.lifeofstrange.com/envirashop/electronics/ecommerce-wordpress-theme/" rel="bookmark" title="eCommerce Wordpress Theme">eCommerce Wordpress Theme</a></h3>
+			<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque imperdiet, nisi sed commodo fermentum, diam orci eleifend...</div>			<div class="cat-info-text">
+									<div class="price">Price: $10.00</div>
+						<div class="readmore"><a href="http://www.lifeofstrange.com/envirashop/electronics/ecommerce-wordpress-theme/">More Info</a></div>
+
+			</div>
+			</div>
+
+			</div>
+Post Ends --> 
+
+<!--
+<hr class="space" />
+
+<%  if paginated_products.is_a?(WillPaginate::Collection) 
+      params.delete(:search)
+      params.delete(:taxon)
+      
+%><%= will_paginate(paginated_products, 
+                    :previous_label => "&#171; #{t('previous')}", 
+                    :next_label => "#{t('next')} &#187;") %>
+<%  end -%>
+
+<hr class="space" />
+-->
