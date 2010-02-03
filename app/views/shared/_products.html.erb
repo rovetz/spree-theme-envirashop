@@ -11,7 +11,7 @@
     <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>
 <!--- Post Starts --> 
       <div class="cat-post">
-        <%= link_to small_image(product) + ' <img style="border: none;" alt=""', product %>
+        <%= link_to small_image(product), product, :style => "border: none;" %>			
         <div class="cat-info">
           <h3><%= link_to product.name, product, :rel=>"bookmark" %></h3> 
           <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque imperdiet, nisi sed commodo fermentum, diam orci eleifend...</div>			
