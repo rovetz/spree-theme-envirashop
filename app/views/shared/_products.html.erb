@@ -1,4 +1,4 @@
-<% paginated_products = params.key?(:keywords) ? Spree::Config.searcher.products : products %>
+﻿<% paginated_products = params.key?(:keywords) ? Spree::Config.searcher.products : products %>
 <% if params[:keywords] %>
 <h3><%= t(:search_results, :keywords => h(params[:keywords])) %></h3>
 <% end %>
@@ -16,8 +16,8 @@
           <h3><%= link_to product.name, product, :rel=>"bookmark" %></h3> 
           <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque imperdiet, nisi sed commodo fermentum, diam orci eleifend...</div>			
           <div class="cat-info-text"> 
-            <div class="price">Price: <%=product_price(product)%></div> 
-            <div class="readmore"><%= link_to "More Info", product %></div> 
+            <div class="price">Цена: <%=product_price(product)%></div> 
+            <div class="readmore"><%= link_to "Подробнее", product %></div> 
           </div> 
         </div> 
         <!--<%= link_to product.name + "<span class='price selling'>#{product_price(product)}</span>", product, :class => 'info' %>-->
