@@ -1,0 +1,207 @@
+/* ==================================================================
+    Secure and Accessible PHP Contact Form v.2.0WP FIXED width
+    BEAST-BLOG.CSS made by Mike Cherim - http://green-beast.com 
+   Designed and built to work with the Beast-Blog WordPress theme
+================================================================== */
+
+#gb_form_div { 
+  text-align : left;
+  width : 460px;
+}
+
+#gb_form {
+  text-align : left;
+  background : transparent;
+}
+
+#gb_form_div a {
+  color : #999;
+  text-decoration : underline;
+}
+
+#gb_form_div a:hover, #gb_form_div a:focus, #gb_form_div a:active {
+  color : #111;
+  text-decoration : none;
+  background-color : #fff;
+}
+
+#gb_form fieldset { 
+  border : 0;
+  margin-top : 10px;
+}
+
+#gb_form legend, #gb_form dt { 
+  font-weight : bold; 
+  color : #666;
+}
+
+#gb_form legend {
+  margin-left : -10px;
+  padding-top : 10px;
+}
+
+#gb_form legend#mainlegend { 
+  font-size : 1.2em;
+  color : #ff3f39;
+  margin-left : -10px;
+  padding-top : 15px;
+  padding-bottom : 10px;
+}
+
+#gb_form legend#mainlegend small { 
+  font-size : .7em;
+  text-transform : uppercase;
+}
+
+#gb_form_div h2.formhead small {
+  font-size : .7em;
+  width : 40%;
+  padding-left : 15px;
+}
+
+#gb_form_div .main_formhead {
+  font-size : 1.4em;
+}
+
+#gb_form label { 
+  color : #666; 
+  margin-top : 5px;
+  margin-left : 0;
+}
+
+#gb_form input.short, #gb_form input.med, #gb_form select.med, #gb_form textarea.textbox { 
+  font : 1em 'trebuchet ms', arial, sans-serif; 
+  color : #666; 
+  padding : 4px; 
+  border : 1px solid #666;
+  background-color : #ccc;
+  line-height : 1.5em;
+  width : 300px;
+}
+
+#gb_form input.short {
+  width : 45px;
+}
+
+#gb_form textarea.textbox {
+  width : 450px;
+  height : 6em;
+}
+
+#gb_form select.med {
+  width : 250px;
+}
+
+#gb_form input.checkbox {
+  cursor : default;
+  background : transparent;
+  border : 0;
+  padding : 0; 
+  margin : 0;
+  width : 10px;
+}
+
+#gb_form input.button:hover, #gb_form input.button:focus, 
+#gb_form input.button.hover, #gb_form input.button.focus {
+  background-color : #99cc66;
+  color : #fff;
+}
+
+/* NOTE: .hover and .focus classes IE JS */
+#gb_form input.short:hover, #gb_form input.short:hover, 
+#gb_form input.med:hover, #gb_form input.med:focus, 
+#gb_form select.med:hover, #gb_form select.med:focus, 
+#gb_form textarea.textbox:hover, #gb_form textarea.textbox:focus, 
+#gb_form input.short.hover, #gb_form input.short.focus,
+#gb_form input.med.hover, #gb_form input.med.focus,  
+#gb_form select.med.hover, #gb_form select.med.focus, 
+#gb_form textarea.textbox.hover, #gb_form textarea.textbox.focus { 
+  color : #111;  
+  padding : 4px; 
+  border : 1px solid #111;
+  background-color : #fff;
+  cursor : text;
+}
+
+
+#gb_form textarea.textbox:focus, #gb_form textarea.textbox.focus { 
+  width : 450px;
+  height : 18em;
+}
+
+#gb_form input.button {
+  margin-top : 10px;
+  padding-right : 20px;
+  padding-left : 20px;
+  width : 35%;
+  float : right;
+  cursor : pointer;
+}
+
+span.error, span.success, #gb_form_div dt { 
+  color : #cd0000;  
+  font-weight : bold; 
+}
+
+#gb_form_div dt small, #gb_form_div .formhead span.success, span.success, dl#result_dl_blockq dt {
+  color : #99cc66;
+}
+
+#gb_form small.whythis, #gb_form small.whythis a { 
+  font-size : .9em; 
+  text-decoration : none;
+  border : 1px solid #fafafa;
+  color : #666;
+}
+
+#gb_form small.whythis a span {
+  color : #fafafa;
+  padding : 1px 4px 1px 4px;
+}
+
+#gb_form small.whythis a:hover, #gb_form small.whythis a:focus, #gb_form small.whythis a:active { 
+  text-decoration : none;
+  color : #000;
+}
+
+#gb_form small.whythis a:hover span, #gb_form small.whythis a:focus span, #gb_form small.whythis a:active span { 
+  border : 1px solid #000;
+  background-color : #99cc66;
+  color : #000;
+  font-weight : bold;
+  font-style : normal;
+}
+
+p.creditline small {
+  clear : both; 
+  display : block;
+  text-align : right;
+  margin : 0;
+  padding : 45px 0 15px 0;
+  font-size : .7em;
+  letter-spacing : .0001em;
+  color : #666;
+}
+
+/* NOTE: .abbr class is for IE */
+.abbr { 
+  cursor : help; 
+  border-bottom : 1px dashed #999;
+}
+
+dl#result_dl_blockq blockquote {
+  margin-left : 0;
+}
+
+dl#result_dl_blockq blockquote p cite {
+  display : block;
+  text-align : right;
+}
+
+#gb_form_div span.items {
+  font-weight : bold;
+  color : #99cc66;
+}
+
+
+/* End BEAST-BLOG CSS */

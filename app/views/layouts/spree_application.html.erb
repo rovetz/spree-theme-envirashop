@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
 <head>
 <% hook :inside_head do %>
   <%= render :partial => 'shared/head'%>
@@ -12,7 +12,7 @@
  
   <div id="header">    
   
-    <h1><a href="http://www.lifeofstrange.com/envirashop" title="eCommerce Wordpress Theme Demo"><img src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/images/logo.jpg" alt="enVirashop" /></a></h1> 
+    <h1><a href="/" title="eCommerce Spree Theme Demo"><img src="/images/logo.jpg" alt="enVirashop" /></a></h1>
     
     <ul id="nav-shadow"> 
       <li class="orange-cart"><a href="http://www.lifeofstrange.com/envirashop/shopping-cart/" title="View Cart">View Cart</a></li> 
@@ -36,7 +36,7 @@
         <ul class="subnav"> 
         <% get_taxonomies.each do |taxonomy| %>                                      
         <% taxonomy.root.children.each do |taxon| %>
-          <li<%= ' class="cat-item cat-item-1"' if @taxon and ([@taxon] + @taxon.ancestors).include?(taxon) %>><%= link_to taxon.name, seo_url(taxon) %></li>
+          <li<%= ' class="cat-item cat-item-1"' if @taxon and ([@taxon] + @taxon.ancestors).include?(taxon) %> ><%= link_to taxon.name, seo_url(taxon) %></li>
         <% end %>                  
         <% end %>  
         </ul> 
@@ -48,7 +48,7 @@
 <div class="wrap background"> 
 
   <div class="archivehead">
-    <div class="arh">You are currently looking at our selection of ננננ.</div>
+    <div class="arh">You are currently looking at our selection of <%= @taxon.name if @taxon %>.</div>
     <div class="pagenavi">
       <div class="wp-pagenavi">
         <span class="current">1</span>

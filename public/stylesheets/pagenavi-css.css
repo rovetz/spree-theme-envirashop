@@ -1,0 +1,81 @@
+/*
++----------------------------------------------------------------+
+|																							|
+|	WordPress 2.8 Plugin: WP-PageNavi 2.50									|
+|	Copyright (c) 2009 Lester "GaMerZ" Chan									|
+|																							|
+|	File Written By:																	|
+|	- Lester "GaMerZ" Chan															|
+|	- http://lesterchan.net															|
+|																							|
+|	File Information:																	|
+|	- Page Navigation CSS Style													|
+|	- wp-content/plugins/wp-pagenavi/pagenavi-css.css					|
+|																							|
++----------------------------------------------------------------+
+*/
+
+.pagenavi {
+	float: right;
+	margin-right: 25px;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.wp-pagenavi a, .wp-pagenavi a:link {
+	padding: 11px 15px;
+	margin: 2px;
+	;
+	color: #5f6774;
+	font-weight: bold;
+	font-size: 11px;
+	background: url(/images/galleryicon.gif) no-repeat;
+}
+
+.wp-pagenavi a:visited {
+	padding: 11px 15px;
+	margin: 2px;
+	;
+	color: #5f6774;
+	font-weight: bold;
+	font-size: 11px;
+	background: url(/images/galleryicon.gif) no-repeat;
+}
+
+.wp-pagenavi a:hover {
+	background: url(/images/galleryiconroll.gif) no-repeat;
+}
+
+.wp-pagenavi a:active {
+	padding: 11px 15px;
+	margin: 2px;
+	;
+	color: #5f6774;
+	font-weight: bold;
+	font-size: 11px;
+	background: url(/images/galleryiconroll.gif) no-repeat;
+}
+
+.wp-pagenavi span.pages {
+	padding: 2px 4px 2px 4px;
+	margin: 2px 2px 2px 2px;
+	color: #000000;
+	background-color: #FFFFFF;
+}
+
+.wp-pagenavi span.current {
+	padding: 11px 15px;
+	margin: 2px;
+	color: #888787;
+	font-size: 11px;
+	font-weight: bold;
+	background: url(/images/galleryiconroll.gif) no-repeat;
+}
+
+.wp-pagenavi span.extend {
+	padding: 8px;
+	margin: 2px;
+	border: 1px solid #000000;
+	color: #000000;
+	background-color: #FFFFFF;
+}
