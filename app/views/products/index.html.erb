@@ -1,0 +1,20 @@
+<% if params[:keywords] %>
+
+  <h1><%= t(:search_results, :keywords => h(params[:keywords])) %></h1>
+  <% hook :search_results do %>
+    <% if @products.empty? %>
+      <%= t(:no_products_found) %>
+    <% else %>
+      <%= render "shared/products", :locals => {:products => @products, :taxon => @taxon } %>
+    <% end %>
+  <% end %>
+
+<% else %>
+
+  <% hook :homepage_products do %>
+    <%= render "shared/products", :locals => {:products => @products, :taxon => @taxon } %>
+  <% end %>
+
+
+<% end %>
+
