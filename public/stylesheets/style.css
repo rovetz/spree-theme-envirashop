@@ -1279,8 +1279,8 @@ ul#gallery a:hover span {
 
 .cat-post img {
 	float: left;
-	margin-right: 30px;   /*Added 20px*/
-	margin-bottom: 20px;  /*Added 20px*/
+	margin-right: 30px;  /*Added 20px*/	
+	margin-bottom: 20px; /*Added 20px*/	
 }
 
 .cat-info {
