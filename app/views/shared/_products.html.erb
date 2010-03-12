@@ -14,7 +14,7 @@
         <%= link_to small_image(product), product, :style => "border: none;" %>			
         <div class="cat-info">
           <h3><%= link_to product.name, product, :rel=>"bookmark" %></h3> 
-          <div><%= product_description(product)[0,300] + '...' %></div>			
+          <div><%= product_description(product)[0,200] + '...' %></div>			
           <div class="cat-info-text"> 
             <div class="price">Цена: <%=product_price(product)%></div> 
             <div class="readmore"><%= link_to "Подробнее", product %></div> 
