@@ -1,0 +1,71 @@
+<% @body_id = 'product-details' %>
+
+<div class="wrap background">
+	<div class="simpleCart_shelfItem">		
+		<div class="productdescription">
+			<h1 class="item_name"><%= @product.name %></h1>
+			<p><%= product_description(@product) rescue t("product_has_no_description") %></p>
+			<%= render 'properties' %>
+			<div class="options">
+				<span class="select_title">Size:
+					<select class="item_specifications">
+						<option value="2 Gig">2 Gig</option>
+						<option value="4 Gig">4 Gig</option>
+						<option value="6 Gig">6 Gig</option>
+						<option value="12 Gig">12 Gig</option>
+					</select>
+				</span>
+				<span class="quantity_title">Quantity:
+					<input type="text" class="item_quantity" value="1" />
+				</span>
+				<!-- field for item shipping cost -->
+				<a href="http://www.lifeofstrange.com/envirashop/shopping-cart/" class="item_add" id="s1">Add to Cart</a>
+				<span class="item_price">$10.00</span>
+			</div>
+		</div>
+		
+		<div class="productsidebar">
+			<!--- Thumbnailed Images Starts --> 
+			<ul id="gallery" style="background-image:url(http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/epblue.jpg&amp;h=265&amp;w=265&amp;zc=1); background-repeat: no-repeat;">
+				<li><a class="zoom2" href="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/epblue.jpg&amp;h=600&amp;w=600&amp;zc=1">
+						<img src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/epblue.jpg&amp;h=45&amp;w=45&amp;zc=1" alt="" />
+						<span><img src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/epblue.jpg&amp;h=265&amp;w=265&amp;zc=1" alt="" /></span>
+					</a>
+				</li>
+				<li><a class="zoom2" href="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/epgreen.jpg&amp;h=600&amp;w=600&amp;zc=1">
+						<img src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/epgreen.jpg&amp;h=45&amp;w=45&amp;zc=1" alt="" />
+						<span><img src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/epgreen.jpg&amp;h=265&amp;w=265&amp;zc=1" alt="" /></span>
+					</a>
+				</li>
+				<li><a class="zoom2" href="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/epgrey.jpg&amp;h=600&amp;w=600&amp;zc=1">
+						<img src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/epgrey.jpg&amp;h=45&amp;w=45&amp;zc=1" alt="" />
+						<span><img src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/epgrey.jpg&amp;h=265&amp;w=265&amp;zc=1" alt="" /></span>
+					</a></li>
+				<li><a class="zoom2" href="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/eppurple.jpg&amp;h=600&amp;w=600&amp;zc=1">
+						<img src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/eppurple.jpg&amp;h=45&amp;w=45&amp;zc=1" alt="" />
+						<span><img src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/eppurple.jpg&amp;h=265&amp;w=265&amp;zc=1" alt="" /></span>
+					</a></li>
+				<li><a class="zoom2" href="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/epred.jpg&amp;h=600&amp;w=600&amp;zc=1">
+						<img src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/epred.jpg&amp;h=45&amp;w=45&amp;zc=1" alt="" />
+						<span><img src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/epred.jpg&amp;h=265&amp;w=265&amp;zc=1" alt="" /></span>
+					</a></li>
+			</ul>
+		</div>
+		<!--- Thumbnailed Images Ends -->
+		 
+		<div class="relatedposts">
+			<h3>Related Products</h3>
+			<ul>
+				<li>
+					<a href="http://www.lifeofstrange.com/envirashop/electronics/example-of-a-product-f/"><img style="border: none;" alt="" src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/epgreen.jpg&amp;h=55&amp;w=55&amp;zc=1" /></a>
+					<a href="http://www.lifeofstrange.com/envirashop/electronics/example-of-a-product-f/" rel="bookmark" title="Example of a Product F">Example of a Product F</a></li>
+				<li>
+					<a href="http://www.lifeofstrange.com/envirashop/electronics/example-of-a-product-d/"><img style="border: none;" alt="" src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/epred.jpg&amp;h=55&amp;w=55&amp;zc=1" /></a>
+					<a href="http://www.lifeofstrange.com/envirashop/electronics/example-of-a-product-d/" rel="bookmark" title="Example of a Product D">Example of a Product D</a></li>
+				<li>
+					<a href="http://www.lifeofstrange.com/envirashop/electronics/example-of-a-product-c/"><img style="border: none;" alt="" src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/eppurple.jpg&amp;h=55&amp;w=55&amp;zc=1" /></a>
+					<a href="http://www.lifeofstrange.com/envirashop/electronics/example-of-a-product-c/" rel="bookmark" title="Example of a Product C">Example of a Product C</a></li>
+			</ul>
+		</div>
+	</div>
+</div>

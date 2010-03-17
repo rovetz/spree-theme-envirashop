@@ -1,76 +1,66 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
-<head>
-<% hook :inside_head do %>
-  <%= render :partial => 'shared/head'%>
-<% end %>
-</head>
-
-<body> 
-
-<div id="container"> 
- 
-  <div id="header">    
-  
-    <h1><a href="/" title="eCommerce Spree Theme Demo"><img src="/images/logo.jpg" alt="enVirashop" /></a></h1>
-    
-    <ul id="nav-shadow"> 
-      <li class="orange-cart"><a href="http://www.lifeofstrange.com/envirashop/shopping-cart/" title="View Cart">View Cart</a></li> 
-    </ul><!-- end shadow navigation --> 
-
-  </div> 
-	
-  <div id="content"> 
-  <div id="headmenu"> 
- 
-  <div id="menu"> 
-    <ul id="nav" class="wrap"> 
-      <li class="page_item notfirst"><a href="/"><span>Home</span></a></li>
-      <li class="page_item page-item-2"><a href="#" title="About Us"><span>About Us</span></a></li> 
-      <li class="page_item page-item-23"><a href="#" title="Testimonials"><span>Testimonials</span></a></li> 
-    </ul> 
-  </div> 
-    
-  <% if @current_controller == "products" or @current_controller == "taxons" %>
-    <%= render "shared/taxonomies" %>
-  <% end %>
-  
-  </div> 
-  
-<div class="wrap background"> 
-
-  <div class="archivehead">
-    <div class="arh">You are currently looking at our selection of <%= @taxon.name if @taxon %>.</div>
-    <div class="pagenavi">
-      <div class="wp-pagenavi">
-        <span class="current">1</span>
-        <a title="2" class="page" href="http://www.lifeofstrange.com/envirashop/category/electronics/page/2/">2</a>
-        <a href="http://www.lifeofstrange.com/envirashop/category/electronics/page/2/">&raquo</a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="page">
-    <%= breadcrumbs(@taxon) if @taxon %>
-    <% if flash[:notice] %>
-    <div class="flash notice"><%= flash[:notice] %></div>
-    <% end %>
-    <% if flash[:error] %>
-    <div class="flash errors"><%= flash[:error] %></div>
-    <% end %>
-  
-    <%= yield %>
-  </div>
-
-</div>
-
-</div> 
-
-<%= render :partial => 'shared/footer'%>
-    
-<!-- Wrap Background Div --> 
- 
-</div> 
-</body> 
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<% hook :inside_head do %>
+		<%= render :partial => 'shared/head'%>
+		<% end %>
+	</head>
+	<body>
+		<div id="container"> 
+			<div id="header"> 
+				<h1><a href="/" title="eCommerce Spree Theme Demo"><img src="/images/logo.jpg" alt="enVirashop" /></a></h1>
+				<ul id="nav-shadow">
+					<li class="orange-cart"><a href="http://www.lifeofstrange.com/envirashop/shopping-cart/" title="View Cart">View Cart</a></li>
+				</ul>
+				<!-- end shadow navigation --> 
+			</div>
+			<div id="content"> 
+				<div id="headmenu"> 
+					<div id="menu"> 
+						<ul id="nav" class="wrap">
+							<li class="page_item notfirst"><a href="/"><span>Home</span></a></li>
+							<li class="page_item page-item-2"><a href="#" title="About Us"><span>About Us</span></a></li>
+							<li class="page_item page-item-23"><a href="#" title="Testimonials"><span>Testimonials</span></a></li>
+						</ul>
+					</div>
+					<% if @current_controller == "products" or @current_controller == "taxons" %>
+						<%= render "shared/taxonomies" %>
+					<% end %>
+				</div>
+				<div class="wrap background"> 
+					<% if @current_controller == "products" or @current_controller == "taxons" %>
+						<div class="archivehead">
+							<div class="arh">You are currently looking at our <%= @taxon ? " selection of " + @taxon.name : " all products" %>.</div>
+							<div class="pagenavi">
+								<div class="wp-pagenavi">
+									<span class="current">1</span>
+									<a title="2" class="page" href="http://www.lifeofstrange.com/envirashop/category/electronics/page/2/">2</a>
+									<a href="http://www.lifeofstrange.com/envirashop/category/electronics/page/2/">&raquo</a>
+								</div>
+							</div>
+						</div>
+					<% end %>
+					
+					<% if flash[:notice] %>
+						<div class="flash notice"><%= flash[:notice] %></div>
+					<% end %>
+					
+					<% if flash[:error] %>
+						<div class="flash errors"><%= flash[:error] %></div>
+					<% end %>
+					
+					<% if @current_controller == "products" && @current_action == "show" %>						
+						<%= yield %>
+					<% else %>
+						<div class="page">							
+							<%= yield %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+			<%= render :partial => 'shared/footer'%>
+			<!-- Wrap Background Div --> 
+		</div>
+	</body>
 </html>
