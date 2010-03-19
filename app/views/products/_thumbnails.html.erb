@@ -1,4 +1,5 @@
 <!-- no need for thumnails unless there is more then one image -->
+<!--
 <% if product.images.size > 1 %>
   <ul id="product-thumbnails" class="thumbnails">
     <% product.images.each do |i| %>  
@@ -37,4 +38,16 @@
       <% end %>
     <% end %>
   </script>
+<% end %>
+
+-->
+
+<% if product.images.size > 1 %>
+	<% product.images.each do |i| %>
+		<li><a class="zoom2" href="<%=i.attachment.url(:mini)%>">
+				<img src="<%=i.attachment.url(:mini)%>" alt="" />
+				<span><img src="<%=i.attachment.url(:mini)%>" alt="" /></span>
+			</a>
+		</li>
+	<% end %>
 <% end %>

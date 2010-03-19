@@ -1,5 +1,7 @@
-<% if image %> 
-  <%= image_tag image.attachment.url(:product) %>
-<% else %>
-  <%= product_image(@product) %>
-<% end %>
+<div class="productsidebar">
+<!--- Thumbnailed Images Starts --> 
+	<ul id="gallery" style="background-image:url(<%= "http://localhost:3000/" + (@product.images.empty? ? @product.images.first.attachment.url(:product) : "images/noimage/product.jpg") %>&amp;h=265&amp;w=265&amp;zc=1); background-repeat: no-repeat;">
+		<%= render 'thumbnails', :product => @product -%>
+	</ul>
+</div>
+<!--- Thumbnailed Images Ends -->
