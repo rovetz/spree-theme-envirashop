@@ -4,7 +4,7 @@
 	<ul>
 		<% @product.taxons.each do |taxon| -%>
 		<li>
-			<a href="<%="/t/#{taxon.permalink}"%>"><img style="border: none;" alt="" src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/epred.jpg&amp;h=55&amp;w=55&amp;zc=1" /></a>
+			<a href="<%="/t/#{taxon.permalink}"%>"><img style="border: none;" alt="" src="<%=taxon.products.active.first.images.first.attachment.url(:mini)%>" /></a>
 			<%= link_to taxon.name, "/t/#{taxon.permalink}", :rel => "bookmark", :title => taxon.name %>
 		</li>
 		<% end %>
