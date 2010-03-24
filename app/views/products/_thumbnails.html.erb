@@ -42,7 +42,7 @@
 
 -->
 
-<% if product.images.size > 1 %>
+<% if product.images.size >= 1 %>
 	<% product.images.each do |i| %>
 		<li><a class="zoom2" href="<%=i.attachment.url(:original)%>">
 				<img src="<%=i.attachment.url(:mini)%>" alt="" />
