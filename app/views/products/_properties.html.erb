@@ -1,5 +1,5 @@
 <% unless @product_properties.empty? %>
-<h3 style="font-size: 1.17em;">Product Properties</h3>
+<h3 style="font-size: 1.17em;"><%=t('product_properties')%></h3>
 <ul>
 <% for product_property in @product_properties %>
 	<li><%= product_property.property.presentation %>: <%= product_property.value %></li>

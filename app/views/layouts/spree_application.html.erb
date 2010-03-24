@@ -31,7 +31,7 @@
 				<div class="wrap background"> 
 					<% if (@current_controller == "products" && @current_action != "show") || @current_controller == "taxons" %>
 						<div class="archivehead">
-							<div class="arh">You are currently looking at <%= @taxon ? " our selection of " + @taxon.name : " all our products" %>.</div>
+							<div class="arh"><%= t('you_are_currently_looking_at') + (@taxon ? t('our_selection_of') + @taxon.name : t('all_our_products')) %>.</div>
 							<div class="pagenavi">
 								<div class="wp-pagenavi">
 									<span class="current">1</span>
