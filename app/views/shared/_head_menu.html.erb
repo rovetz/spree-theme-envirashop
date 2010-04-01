@@ -1,0 +1,12 @@
+<div id="headmenu"> 
+	<div id="menu"> 
+		<ul id="nav" class="wrap">
+			<li class="page_item notfirst"><a href="/content/home"><span><%=t('home')%></span></a></li>
+			<li class="page_item page-item-2"><a href="/content/about" title=<%=t('about_us')%>><span><%=t('about_us')%></span></a></li>
+			<li class="page_item page-item-23"><a href="/content/delivery" title=<%=t('delivery')%>><span><%=t('delivery')%></span></a></li>
+		</ul>
+	</div>
+	<% if @current_controller == "products" or @current_controller == "taxons" %>
+		<%= render "shared/taxonomies" %>
+	<% end %>
+</div>

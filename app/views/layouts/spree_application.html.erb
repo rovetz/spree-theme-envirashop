@@ -8,26 +8,9 @@
 	</head>
 	<body>
 		<div id="container"> 
-			<div id="header"> 
-				<h1><a href="/" title="eCommerce Spree Theme"><img src="/images/logo.jpg" alt="enVirashop" /></a></h1>
-				<ul id="nav-shadow">
-					<li class="orange-cart"><a href="#" title="View Cart">View Cart</a></li>
-				</ul>
-				<!-- end shadow navigation --> 
-			</div>
+			<%= render :partial => 'shared/header'%>
 			<div id="content"> 
-				<div id="headmenu"> 
-					<div id="menu"> 
-						<ul id="nav" class="wrap">
-							<li class="page_item notfirst"><a href="/"><span><%=t('home')%></span></a></li>
-							<li class="page_item page-item-2"><a href="#" title=<%=t('about_us')%>><span><%=t('about_us')%></span></a></li>
-							<li class="page_item page-item-23"><a href="#" title=<%=t('delivery')%>><span><%=t('delivery')%></span></a></li>
-						</ul>
-					</div>
-					<% if @current_controller == "products" or @current_controller == "taxons" %>
-						<%= render "shared/taxonomies" %>
-					<% end %>
-				</div>
+				<%= render :partial => 'shared/head_menu'%>
 				<div class="wrap background"> 
 					<% if (@current_controller == "products" && @current_action != "show") || @current_controller == "taxons" %>
 						<div class="archivehead">

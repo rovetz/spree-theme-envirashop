@@ -7,6 +7,7 @@
 			<p><%= product_description(@product) rescue t("product_has_no_description") %></p>
 			<%= render 'properties' %>
 			<div class="options">
+<!-- TODO 
 				<span class="select_title">Size:
 					<select class="item_specifications">
 						<option value="2 Gig">2 Gig</option>
@@ -18,8 +19,8 @@
 				<span class="quantity_title">Quantity:
 					<input type="text" class="item_quantity" value="1" />
 				</span>
-				<!-- field for item shipping cost -->
-				<a href="http://www.lifeofstrange.com/envirashop/shopping-cart/" class="item_add" id="s1">Add to Cart</a>
+				<a href="#" class="item_add" id="s1">Add to Cart</a> 				
+-->
 				<span class="item_price"><%=product_price(@product)%></span>
 			</div>
 		</div>
