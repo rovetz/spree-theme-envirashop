@@ -1,8 +1,5 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-		<meta name="description" content="enVirashop - eCommerce Wordpress Theme Demo" />
-		<meta name="keywords" content="" />
+	<head>		
 		<script type="text/javascript" src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/js/jquery.js"></script>
 		<script type="text/javascript" src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/js/execute.js"></script>
 		<script type="text/javascript" src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/js/simpleCart.js"></script>
@@ -77,9 +74,6 @@ $(document).ready(function(){
 		<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.lifeofstrange.com/envirashop/xmlrpc.php?rsd" />
 		<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.lifeofstrange.com/envirashop/wp-includes/wlwmanifest.xml" />
 		<link rel="index" title="enVirashop" href="http://www.lifeofstrange.com/envirashop" />
-		<meta name="generator" content="WordPress 2.8.6" />
-		<meta name="generator" content="enVirashop 1.0" />
-		<meta name="generator" content="envira Framework Version 1.1.1" />
 		<link href="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/styles/default.css" rel="stylesheet" type="text/css" />
 		<link href="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/custom.css" rel="stylesheet" type="text/css" />
 		<link rel="shortcut icon" href="http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/envira-icon.png" />
@@ -111,7 +105,7 @@ $(document).ready(function(){
 								<!-- Carousel Post Markup -->
 								<% @products.each do |product| %>
 									<li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-<%=product.id%> jcarousel-item-<%=product.id%>-horizontal" jcarouselindex="<%=product.id%>" style="">
-										<%= link_to small_image(product), product, :style => "border: none;" %>
+										<%= link_to small_image(product, :style => "border:none;margin-bottom:20px;"), product  %>
 										<div class="carouseltitle"><%= product.name %></div>
 										<div class="carouselprice"><%= product_price(product) %></div>
 									</li>								
