@@ -92,14 +92,12 @@ $(document).ready(function(){
 				<div class="wrap background">
 					<!-- Feature Post Markup -->
 					<div class="featurephoto">
-						<a href="http://www.lifeofstrange.com/envirashop/electronics/ecommerce-wordpress-theme/"><img style="border: none;" alt="" src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/epblue.jpg&amp;h=265&amp;w=265&amp;zc=1" /></a></div>
+						<%= link_to product_image(@featured_product), @featured_product, :style => "border: none;" %>
+					</div>
 					<div class="featuretext">
-						<h1>eCommerce Wordpress Theme</h1>
-						<p>This is an example of a featured product that uses the excerpt to display the 
-							content on the homepage. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-							Pellentesque imperdiet, nisi sed commodo fermentum, diam orci eleifend massa, at 
-							fermentum ante sapien eu ipsum. Sit amet, consectetur adipiscing elit.</p>
-						<a href="http://www.lifeofstrange.com/envirashop/electronics/ecommerce-wordpress-theme/" class="moreinfo">More Info</a>
+						<h1><%=@featured_product.name%></h1>
+						<p><%= truncate(product_description(@featured_product), 120) %></p>
+						<%= link_to "Подробнее", @featured_product, :class => "moreinfo" %>						
 					</div>
 					<!-- End Feature Post Markup -->
 					<!-- Ribbon Markup -->
@@ -111,46 +109,13 @@ $(document).ready(function(){
 						<div class="jcarousel-clip jcarousel-clip-horizontal">
 							<ul class="jcarousel-list jcarousel-list-horizontal" style="width: 1640px; left: 0px; ">
 								<!-- Carousel Post Markup -->
-								<li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal" jcarouselindex="1" style="">
-									<a href="http://www.lifeofstrange.com/envirashop/t-shirts/example-of-a-product-i/"><img style="border: none;" alt="" src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/epred.jpg&amp;h=120&amp;w=120&amp;zc=1" /></a>
-									<div class="carouseltitle">Example of a Product I</div>
-									<div class="carouselprice">$20.00</div>
-								</li>
-								<li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-2 jcarousel-item-2-horizontal" jcarouselindex="2" style="">
-									<a href="http://www.lifeofstrange.com/envirashop/software/example-of-a-product-h/"><img style="border: none;" alt="" src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/eppurple.jpg&amp;h=120&amp;w=120&amp;zc=1" /></a>
-									<div class="carouseltitle">Example of a Product H</div>
-									<div class="carouselprice">$25.00</div>
-								</li>
-								<li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-3 jcarousel-item-3-horizontal" jcarouselindex="3" style="">
-									<a href="http://www.lifeofstrange.com/envirashop/posters/example-of-a-product-g/"><img style="border: none;" alt="" src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/epgrey.jpg&amp;h=120&amp;w=120&amp;zc=1" /></a>
-									<div class="carouseltitle">Example of a Product G</div>
-									<div class="carouselprice">$5.00</div>
-								</li>
-								<li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-4 jcarousel-item-4-horizontal" jcarouselindex="4" style="">
-									<a href="http://www.lifeofstrange.com/envirashop/electronics/ecommerce-wordpress-theme/"><img style="border: none;" alt="" src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/epblue.jpg&amp;h=120&amp;w=120&amp;zc=1" /></a>
-									<div class="carouseltitle">eCommerce Wordpress Theme</div>
-									<div class="carouselprice">$10.00</div>
-								</li>
-								<li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-5 jcarousel-item-5-horizontal" jcarouselindex="5" style="">
-									<a href="http://www.lifeofstrange.com/envirashop/electronics/example-of-a-product-f/"><img style="border: none;" alt="" src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/epgreen.jpg&amp;h=120&amp;w=120&amp;zc=1" /></a>
-									<div class="carouseltitle">Example of a Product F</div>
-									<div class="carouselprice">$80.00</div>
-								</li>
-								<li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-6 jcarousel-item-6-horizontal" jcarouselindex="6" style="">
-									<a href="http://www.lifeofstrange.com/envirashop/electronics/example-of-a-product-d/"><img style="border: none;" alt="" src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/epred.jpg&amp;h=120&amp;w=120&amp;zc=1" /></a>
-									<div class="carouseltitle">Example of a Product D</div>
-									<div class="carouselprice">$15.00</div>
-								</li>
-								<li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-7 jcarousel-item-7-horizontal" jcarouselindex="7" style="">
-									<a href="http://www.lifeofstrange.com/envirashop/electronics/example-of-a-product-c/"><img style="border: none;" alt="" src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/eppurple.jpg&amp;h=120&amp;w=120&amp;zc=1" /></a>
-									<div class="carouseltitle">Example of a Product C</div>
-									<div class="carouselprice">$30.00</div>
-								</li>
-								<li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-8 jcarousel-item-8-horizontal" jcarouselindex="8" style="">
-									<a href="http://www.lifeofstrange.com/envirashop/electronics/example-of-a-product-b/"><img style="border: none;" alt="" src="http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/timthumb.php?src=http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/epgrey.jpg&amp;h=120&amp;w=120&amp;zc=1" /></a>
-									<div class="carouseltitle">Example of a Product B</div>
-									<div class="carouselprice">$55.00</div>
-								</li>
+								<% @products.each do |product| %>
+									<li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-<%=product.id%> jcarousel-item-<%=product.id%>-horizontal" jcarouselindex="<%=product.id%>" style="">
+										<%= link_to small_image(product), product, :style => "border: none;" %>
+										<div class="carouseltitle"><%= product.name %></div>
+										<div class="carouselprice"><%= product_price(product) %></div>
+									</li>								
+								<% end %>
 								<!-- End Carousel Post Markup -->
 							</ul>
 						</div>
