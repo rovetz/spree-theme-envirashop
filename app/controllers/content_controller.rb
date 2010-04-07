@@ -18,12 +18,4 @@ class ContentController < Spree::BaseController
   	render "home", :layout => false
   end
   
-  def about
-  	render "about"
-  end
-  
-  def delivery
-  	render "delivery"
-  end
-  
 end
