@@ -7,7 +7,5 @@
 			<li class="page_item page-item-3"><a href="/content/contacts" title=<%=t('contacts')%>><span><%=t('contacts')%></span></a></li>
 		</ul>
 	</div>
-	<% if @current_controller == "products" or @current_controller == "taxons" %>
-		<%= render "shared/taxonomies" %>
-	<% end %>
+	<%= render "shared/taxonomies" %>	
 </div>
