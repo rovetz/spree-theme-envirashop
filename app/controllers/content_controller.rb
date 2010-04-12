@@ -13,8 +13,8 @@ class ContentController < Spree::BaseController
   end  
   
   def home  	
-  	@featured_product = Product.first
-  	@products = Product.all :limit => 10, :offset => 2
+  	@featured_product = Product.active.first
+  	@products = Product.active.all :limit => 10, :offset => 2
   	render "home", :layout => false
   end
   
