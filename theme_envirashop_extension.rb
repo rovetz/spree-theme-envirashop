@@ -18,5 +18,18 @@ class ThemeEnvirashopExtension < Spree::Extension
     # Spree::BaseController.class_eval do
     #   helper YourHelper
     # end
-  end
+    
+    Spree::ContentController.class_eval do
+      helper :products
+      
+      def home
+        @featured_product = Product.active.first
+        @products = Product.active.all :limit => 10, :offset => 1
+        render "home", :layout => false
+      end
+      
+    end
+    
+  end  
+  
 end
