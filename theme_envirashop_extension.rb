@@ -15,12 +15,11 @@ class ThemeEnvirashopExtension < Spree::Extension
   def activate
 
     # make your helper avaliable in all views
-    # Spree::BaseController.class_eval do
-    #   helper YourHelper
-    # end
+    Spree::BaseController.class_eval do
+      helper :products
+    end
     
     Spree::ContentController.class_eval do
-      helper :products
       
       def home
         @featured_product = Product.active.first
