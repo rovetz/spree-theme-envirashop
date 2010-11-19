@@ -8,9 +8,9 @@ class ThemeEnvirashopExtension < Spree::Extension
 
   # Please use theme_envirashop/config/routes.rb instead for extension routes.
 
-  # def self.require_gems(config)
-  #   config.gem "gemname-goes-here", :version => '1.2.3'
-  # end
+  def self.require_gems(config)
+    config.gem "haml"
+  end
   
   def activate
 
