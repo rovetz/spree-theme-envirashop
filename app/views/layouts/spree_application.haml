@@ -1,0 +1,33 @@
+!!! Strict
+%html{:lang => "en", "xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    - hook :inside_head do
+      = render :partial => 'shared/head'
+  %body
+    #container
+      = render :partial => 'shared/header'
+      #content
+        = render :partial => 'shared/head_menu'
+        .wrap.background
+          - if (@current_controller == "products" && @current_action != "show") || @current_controller == "taxons"
+            .archivehead
+              .arh
+                = t('you_are_currently_looking_at') + (@taxon ? t('our_selection_of') + @taxon.name : t('all_our_products'))
+                \.
+              .pagenavi
+                .wp-pagenavi
+                  %span.current 1
+                  /
+                    <a title="2" class="page" href="http://www.lifeofstrange.com/envirashop/category/electronics/page/2/">2</a>
+                    <a href="http://www.lifeofstrange.com/envirashop/category/electronics/page/2/">&raquo</a>
+          - if flash[:notice]
+            .flash.notice= flash[:notice]
+          - if flash[:error]
+            .flash.errors= flash[:error]
+          - if @current_controller == "products" && @current_action == "show"
+            = yield
+          - else
+            .page
+              = yield
+      = render :partial => 'shared/footer'
+      / Wrap Background Div

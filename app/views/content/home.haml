@@ -1,0 +1,171 @@
+%html{:lang => "en", "xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %script{:src => "http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/js/jquery.js", :type => "text/javascript"}
+    %script{:src => "http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/js/execute.js", :type => "text/javascript"}
+    %script{:src => "http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/js/simpleCart.js", :type => "text/javascript"}
+    %script{:src => "http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/js/jquery.jcarousel.pack.js", :type => "text/javascript"}
+    %script{:src => "http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/js/yahoo-dom-event.js", :type => "text/javascript"}
+    %script{:src => "http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/js/animation-min.js", :type => "text/javascript"}
+    %script{:src => "http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/js/main-javascript.js", :type => "text/javascript"}
+    %link{:href => "http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/includes/fancybox/jquery.fancybox-1.2.6.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %script{:src => "http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/includes/fancybox/jquery.fancybox-1.2.6.pack.js", :type => "text/javascript"}
+    :javascript
+      CartItem.prototype.shipping=function(){
+      if(this.specifications){
+      if( this.specifications == '2 Gig' ){
+      return this.quantity*10.00;
+      } else if( this.specifications == '4 Gig') {
+      return this.quantity*15.00;
+      } else if( this.specifications == '6 Gig') {
+      return this.quantity*20.00;
+      } else if( this.specifications == '12 Gig') {
+      return this.quantity*30.00;
+      } else {
+      return this.quantity*10.00;
+      }
+      } else {
+      return this.quantity*2.00;
+      }
+      }
+      simpleCart.email = "example@paypal.com"	
+      simpleCart.checkoutTo = PayPal;
+      simpleCart.currency = USD;
+      simpleCart.cartHeaders = ["Name" , "Specifications", "Price" , "decrement_noHeader" , "Quantity", "increment_noHeader", "Total" ];
+    :javascript
+      $(document).ready(function(){
+      $("ul.subnav").parent().append(""); //Only shows drop down trigger when js is enabled - Adds empty span tag after ul.subnav
+      $("ul.topnav li span").click(function() { //When trigger is clicked...
+      //Following events are applied to the subnav itself (moving subnav up and down)
+      $(this).parent().find("ul.subnav").slideDown('fast').show(); //Drop down the subnav on click
+      $(this).parent().hover(function() {
+      }, function(){	
+      $(this).parent().find("ul.subnav").slideUp('slow'); //When the mouse hovers out of the subnav, move it back up
+      });
+      //Following events are applied to the trigger (Hover events for the trigger)
+      }).hover(function() { 
+      $(this).addClass("subhover"); //On hover over, add class "subhover"
+      }, function(){	//On Hover Out
+      $(this).removeClass("subhover"); //On hover out, remove class "subhover"
+      });
+      });
+    :javascript
+      $(document).ready(function() {
+      $("a.zoom").fancybox();
+      $("a.zoom1").fancybox({
+      'overlayOpacity'	:	0.7,
+      'overlayColor'		:	'#FFF'
+      });
+      $("a.zoom2").fancybox({
+      'zoomSpeedIn'		:	500,
+      'zoomSpeedOut'		:	500
+      });
+      });
+    %link{:href => "http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/js/skin.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/style.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://www.lifeofstrange.com/envirashop/feed/", :rel => "alternate", :title => "RSS 2.0", :type => "application/rss+xml"}/
+    %link{:href => "http://www.lifeofstrange.com/envirashop/feed/rss/", :rel => "alternate", :title => "RSS .92", :type => "text/xml"}/
+    %link{:href => "http://www.lifeofstrange.com/envirashop/feed/atom/", :rel => "alternate", :title => "Atom 0.3", :type => "application/atom+xml"}/
+    %link{:href => "http://www.lifeofstrange.com/envirashop/xmlrpc.php", :rel => "pingback"}/
+    %title= title
+    %link#wp-pagenavi-css{:href => "http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/pagenavi-css.css?ver=2.50", :media => "all", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://www.lifeofstrange.com/envirashop/xmlrpc.php?rsd", :rel => "EditURI", :title => "RSD", :type => "application/rsd+xml"}/
+    %link{:href => "http://www.lifeofstrange.com/envirashop/wp-includes/wlwmanifest.xml", :rel => "wlwmanifest", :type => "application/wlwmanifest+xml"}/
+    %link{:href => "http://www.lifeofstrange.com/envirashop", :rel => "index", :title => "enVirashop"}/
+    %link{:href => "http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/styles/default.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://www.lifeofstrange.com/envirashop/wp-content/themes/enVirashop/custom.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://www.lifeofstrange.com/envirashop/wp-content/uploads/2009/11/envira-icon.png", :rel => "shortcut icon"}/
+  %body
+    #container
+      = render :partial => 'shared/header'
+      #content
+        = render :partial => 'shared/head_menu'
+        .wrap.background
+          / Feature Post Markup
+          .featurephoto
+            = link_to product_image(@featured_product), @featured_product, :style => "border: none;"
+          .featuretext
+            %h1= @featured_product.name
+            %p= truncate(product_description(@featured_product), 120)
+            = link_to "Подробнее", @featured_product, :class => "moreinfo"
+          / End Feature Post Markup
+          / Ribbon Markup
+          .ribbon.blue-banner= t('ribbon')
+          / End Ribbon Markup
+          #mycarousel.jcarousel-skin-tango.jcarousel-container.jcarousel-container-horizontal{:style => "display: block; "}
+            .jcarousel-prev.jcarousel-prev-horizontal{:style => "display: block; "}
+            .jcarousel-next.jcarousel-next-horizontal{:style => "display: block; "}
+            .jcarousel-clip.jcarousel-clip-horizontal
+              %ul.jcarousel-list.jcarousel-list-horizontal{:style => "width: 1640px; left: 0px; "}
+                / Carousel Post Markup
+                - @products.each do |product|
+                  %li{:class => "jcarousel-item jcarousel-item-horizontal jcarousel-item-#{product.id} jcarousel-item-#{product.id}-horizontal", :jcarouselindex => product.id, :style => ""}
+                    = link_to small_image(product, :style => "border:none;margin-bottom:20px;"), product
+                    .carouseltitle= product.name
+                    .carouselprice= product_price(product)
+                / End Carousel Post Markup
+          :javascript
+            /**
+            * We use the initCallback callback
+            * to assign functionality to the controls
+            */
+            function mycarousel_initCallback(carousel) {
+            jQuery('.jcarousel-control a').bind('click', function() {
+            carousel.scroll(jQuery.jcarousel.intval(jQuery(this).text()));
+            return false;
+            });
+            jQuery('.jcarousel-scroll select').bind('change', function() {
+            carousel.options.scroll = jQuery.jcarousel.intval(this.options[this.selectedIndex].value);
+            return false;
+            });
+            jQuery('#mycarousel-next').bind('click', function() {
+            carousel.next();
+            return false;
+            });
+            jQuery('#mycarousel-prev').bind('click', function() {
+            carousel.prev();
+            return false;
+            });
+            };
+            // Ride the carousel...
+            jQuery(document).ready(function() {
+            jQuery("#mycarousel").jcarousel({
+            wrap: 'both',
+            scroll: 1,
+            animation: 'fast',
+            auto: '0',
+            initCallback: mycarousel_initCallback,
+            // This tells jCarousel NOT to autobuild prev/next buttons
+            buttonNextHTML: null,
+            buttonPrevHTML: null
+            });
+            });
+      = render :partial => 'shared/footer'
+      / Wrap Background Div
+    #fancy_overlay
+    #fancy_loading
+      %div
+    #fancy_outer
+      #fancy_inner
+        #fancy_close
+        #fancy_bg
+          #fancy_bg_n.fancy_bg
+          #fancy_bg_ne.fancy_bg
+          #fancy_bg_e.fancy_bg
+          #fancy_bg_se.fancy_bg
+          #fancy_bg_s.fancy_bg
+          #fancy_bg_sw.fancy_bg
+          #fancy_bg_w.fancy_bg
+          #fancy_bg_nw.fancy_bg
+        %a#fancy_left{:href => "javascript:;"}
+          %span#fancy_left_ico.fancy_ico
+        %a#fancy_right{:href => "javascript:;"}
+          %span#fancy_right_ico.fancy_ico
+        #fancy_content
+    #fancy_title
+      %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :summary => "layout table"}
+        %tbody
+          %tr
+            %td#fancy_title_left.fancy_title
+            %td#fancy_title_main.fancy_title
+              %div
+            %td#fancy_title_right.fancy_title
