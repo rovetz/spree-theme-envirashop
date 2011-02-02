@@ -3,5 +3,5 @@
     %ul.subnav
       - get_taxonomies.each do |taxonomy|
         - taxonomy.root.children.each do |taxon|
-          %li{:class => (@taxon and ([@taxon] + @taxon.ancestors).include?(taxon)) ? "cat-item cat-item-1" : "" }
-            =link_to taxon.name, seo_url(taxon)
+          %li.cat-item= link_to taxon.name, seo_url(taxon)
+    %span
